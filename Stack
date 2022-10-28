@@ -1,0 +1,33 @@
+By LinkList
+struct Node;
+typedef struct Node *PtrToNode;
+typedef PtrToNode Stack;
+struct Node
+{
+  ElementType Element;
+  PtrToNode Next;
+};
+
+int IsEmpty(Stack s)
+{
+  return s->Next = NULL;
+}
+
+By Array
+struct Stack//declare of stack
+{
+	int capacity;
+	int TopOfStack;
+	ElementType * Array;
+};
+
+int Pop(Stack s,ElementType &x)
+{
+	if(IsEmpty(s)) return -1;
+	else
+	{
+		//此处并没有实际意义上的弹出，只是让栈顶指针变指向，实现伪弹出，除了占用内存以外，对整体功能实现并没有影响
+		x=s->Array[s->TopOfStack--];
+		return 0;
+	}
+}
